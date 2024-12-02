@@ -1,16 +1,21 @@
-// then() 함수 사용법
-void main() async {
-  await getVersionName().then((value) => {
-    print(value)
+// await 키워드 활용 예
+void main() {
+  printOne();
+  printTwo();
+  printThree();
+}
+
+void printOne() {
+  print('One');
+}
+
+void printThree() {
+  print('Three');
+}
+
+void printTwo() async {
+  Future.delayed(Duration(seconds: 1), () {
+    print('Future!!');
   });
-  print('end process');
-}
-
-Future<String> getVersionName() async {
-  var versionName = await lookUpVersionName();
-  return versionName;
-}
-
-String lookUpVersionName() {
-  return 'Android Q';
+  print('Two');
 }
