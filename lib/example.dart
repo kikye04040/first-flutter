@@ -14,8 +14,8 @@ void printThree() {
 }
 
 void printTwo() async {
-  Future.delayed(Duration(seconds: 1), () {
-    print('Future!!');
+  await Future.delayed(Duration(seconds: 2), () {
+    print('Future Method');
   });
   print('Two');
 }
