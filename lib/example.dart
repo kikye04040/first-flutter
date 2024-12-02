@@ -1,14 +1,16 @@
-// 비동기 처리
-void main() {
-  checkVersion();
+// then() 함수 사용법
+void main() async {
+  await getVersionName().then((value) => {
+    print(value)
+  });
   print('end process');
 }
 
-Future checkVersion() async {
-  var version = await lookUpVersion();
-  print(version);
+Future<String> getVersionName() async {
+  var versionName = await lookUpVersionName();
+  return versionName;
 }
 
-int lookUpVersion() {
-  return 12;
+String lookUpVersionName() {
+  return 'Android Q';
 }
