@@ -1,16 +1,16 @@
-// JSON 데이터 디코딩 예
+// JSON 데이터 인코딩 예
 import 'dart:convert';
 
 void main() {
-  var jsonString = '''
-  [
-    {"score":40},
-    {"score":60}
-  ]
-  ''';
-  var scores = jsonDecode(jsonString);
-  print(scores is List);
-  var firstScore = scores[0];
-  print(firstScore is Map);
-  print(firstScore['score'] == 40);
+  var scores = [
+    {'score':40},
+    {'score':80},
+    {'score':100, 'overtime':true, 'special_guest':null}
+  ];
+
+  var jsonText = jsonEncode(scores);
+  print(jsonText ==
+      '[{"score":40},{"score":80},'
+      '{"score":100,"overtime":true,'
+      '"special_guest":null}]');
 }
