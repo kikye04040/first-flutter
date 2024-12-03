@@ -1,21 +1,16 @@
-// await 키워드 활용 예
+// JSON 데이터 디코딩 예
+import 'dart:convert';
+
 void main() {
-  printOne();
-  printTwo();
-  printThree();
-}
-
-void printOne() {
-  print('One');
-}
-
-void printThree() {
-  print('Three');
-}
-
-void printTwo() async {
-  await Future.delayed(Duration(seconds: 2), () {
-    print('Future Method');
-  });
-  print('Two');
+  var jsonString = '''
+  [
+    {"score":40},
+    {"score":60}
+  ]
+  ''';
+  var scores = jsonDecode(jsonString);
+  print(scores is List);
+  var firstScore = scores[0];
+  print(firstScore is Map);
+  print(firstScore['score'] == 40);
 }
