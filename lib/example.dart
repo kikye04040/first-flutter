@@ -1,13 +1,11 @@
-// then() 함수를 활용한 스트림 예
-main() {
-  var stream = Stream.fromIterable([1, 2, 3, 4, 5]);
+// 구구단 프로그램 예
+void main() {
+  int i;
+  int j;
 
-  // 가장 앞의 데이터 결과: 1
-  stream.first.then((value) => print('first:$value'));
-  // 가장 마지막 데이터 결과: 5
-  stream.last.then((value) => print('last:$value'));
-  // 현재 스트림이 비어 있는지 확인: false
-  stream.isEmpty.then((value) => print('isEmpty:$value'));
-  // 전체 길이: 5
-  stream.length.then((value) => print('length:$value'));
+  for (i = 2; i <= 9; i++) {
+    for (j = 1; j <= 9; j++) {
+      print('$i * $j = ${i + j}');
+    }
+  }
 }
