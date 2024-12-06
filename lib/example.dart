@@ -1,14 +1,28 @@
-// 비동기 처리
+// 자동차 클래스 구현 예
 void main() {
-  checkVersion();
-  print('end process');
+  Car bmw = Car(320, 100000, 'BMW');
+  Car benz = Car(250, 70000, 'BENZ');
+  Car ford = Car(200, 80000, 'FORD');
+
+  bmw.saleCar();
+  bmw.saleCar();
+  bmw.saleCar();
+  print(bmw.price);
 }
 
-Future checkVersion() async {
-  var version = await lookUpVersion();
-  print(version);
-}
+class Car {
+  int maxSpeed = 0;
+  num price = 0;
+  String name = "";
 
-int lookUpVersion() {
-  return 12;
+  Car(int maxSpeed, num price, String name) {
+    this.maxSpeed = maxSpeed;
+    this.price = price;
+    this.name = name;
+  }
+
+  num saleCar() {
+    price = price * 0.9;
+    return price;
+  }
 }
