@@ -1,28 +1,14 @@
-// 자동차 클래스 구현 예
+// 로또 번호 생성기
+import 'dart:collection';
+import 'dart:math' as math;
+
 void main() {
-  Car bmw = Car(320, 100000, 'BMW');
-  Car benz = Car(250, 70000, 'BENZ');
-  Car ford = Car(200, 80000, 'FORD');
+  var rand = math.Random();
+  HashSet<int> lotteryNumber = HashSet();
 
-  bmw.saleCar();
-  bmw.saleCar();
-  bmw.saleCar();
-  print(bmw.price);
-}
-
-class Car {
-  int maxSpeed = 0;
-  num price = 0;
-  String name = "";
-
-  Car(int maxSpeed, num price, String name) {
-    this.maxSpeed = maxSpeed;
-    this.price = price;
-    this.name = name;
+  while (lotteryNumber.length < 6) {
+    lotteryNumber.add(rand.nextInt(45) + 1);
   }
 
-  num saleCar() {
-    price = price * 0.9;
-    return price;
-  }
+  print(lotteryNumber);
 }
