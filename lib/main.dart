@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Container(
-        child: Center(
+          color: Colors.white,
+          child: Center(
           child: Text('hello\nFlutter', textAlign: TextAlign.center),
         )
       )
