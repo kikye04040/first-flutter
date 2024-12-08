@@ -31,7 +31,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Text('hello\nFlutter', textAlign: TextAlign.center),
+      home: Center(
+        child: Text('hello\nFultter', textAlign: TextAlign.center),
+      ),
     );
   }
 }
