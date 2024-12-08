@@ -1,14 +1,14 @@
-// 비동기 처리
+// 로또 번호 생성기
+import 'dart:collection';
+import 'dart:math' as math;
+
 void main() {
-  checkVersion();
-  print('end process');
-}
+  var rand = math.Random();
+  HashSet<int> lotteryNumber = HashSet();
 
-Future checkVersion() async {
-  var version = await lookUpVersion();
-  print(version);
-}
+  while (lotteryNumber.length < 6) {
+    lotteryNumber.add(rand.nextInt(45) + 1);
+  }
 
-int lookUpVersion() {
-  return 12;
+  print(lotteryNumber);
 }
