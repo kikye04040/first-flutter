@@ -15,9 +15,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State<MyApp> {
+  var switchValue = false;
+
   @override
   Widget build(BuildContext context) {
-    var switchValue = false;
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -30,8 +31,10 @@ class _MyApp extends State<MyApp> {
             child: Switch(
                 value: switchValue,
                 onChanged: (value) {
-                  print(value);
-                  switchValue = value;
+                  setState(() {
+                    print(value);
+                    switchValue = value;
+                  });
                 }),
           ),
         ));
